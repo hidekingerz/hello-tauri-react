@@ -24,8 +24,16 @@
         "save": true
       },
       "fs": {
-        "all": true,
-        "scope": ["$DOWNLOAD/*"]
+        "readFile": true,
+        "writeFile": true,
+        "readDir": true,
+        "copyFile": true,
+        "createDir": true,
+        "removeDir": true,
+        "removeFile": true,
+        "renameFile": true,
+        "exists": true,
+        "scope": ["$DOWNLOAD/**"]
       },
       "notification": {
         "all": true

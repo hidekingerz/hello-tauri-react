@@ -5,6 +5,7 @@ import { AppVersion } from './feature/app/AppVersion';
 import { ClipBoard } from './feature/clipboard/ClipBoard';
 import { Dialog } from './feature/dialog/Dialog.jsx';
 import { GlobalShortcut } from './feature/GrobalShortcut/GlobalShortcut';
+import { Fs } from './feature/fs/Fs.jsx';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <ClipBoard />
       <Dialog />
       <GlobalShortcut />
+      <Fs />
     </Container>
   );
 };

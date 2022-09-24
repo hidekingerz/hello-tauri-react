@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Stack, Typography } from '@mui/material';
 import { getName, getTauriVersion, getVersion } from '@tauri-apps/api/app';
 import { useState } from 'react';
@@ -8,16 +8,16 @@ export const AppVersion = () => {
   const [appVersion, setAppVersion] = useState('');
   const [tauriVersion, setTauriVersion] = useState('');
 
-  const getInfo = async () => {
-    const appName = await getName();
-    const tauriVer = await getTauriVersion();
-    const appVer = await getVersion();
-    setName(appName);
-    setAppVersion(appVer);
-    setTauriVersion(tauriVer);
-  };
-
-  getInfo();
+  useEffect(() => {
+    (async () => {
+      const appName = await getName();
+      const tauriVer = await getTauriVersion();
+      const appVer = await getVersion();
+      setName(appName);
+      setAppVersion(appVer);
+      setTauriVersion(tauriVer);
+    })();
+  }, []);
 
   return (
     <Stack direction={'column'}>
